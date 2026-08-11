@@ -297,7 +297,7 @@
         /* ===== STATS ROW ===== */
         .stats-row {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 14px;
         }
 
@@ -698,7 +698,7 @@
             }
 
             .stats-row {
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(2, 1fr);
                 gap: 8px;
             }
 
@@ -719,7 +719,7 @@
             }
 
             .contact-grid {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 1fr 1fr 1fr;
             }
         }
 
@@ -738,7 +738,7 @@
             }
 
             .stats-row {
-                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-columns: 1fr 1fr;
                 gap: 6px;
             }
 
@@ -755,7 +755,7 @@
             }
 
             .contact-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
             }
 
             .project-item {
@@ -835,15 +835,12 @@
                     building models that solve real problems and designing systems people actually use.
                     I believe in clean code, data-driven decisions, and the discipline of shipping.
                 </p>
-                <p>
-                    I'm not looking for a regular office job. I want to <strong>build things that matter</strong> —
-                    whether that's a startup, a research breakthrough, or a tool used by thousands.
-                </p>
                 <div class="about-meta">
                     <span><i class="fas fa-map-pin"></i> Beijing, China</span>
                     <span><i class="fas fa-graduation-cap"></i> BIT · CS · 2026–2030</span>
                     <span><i class="fas fa-trophy"></i> Full Scholarship</span>
                     <span><i class="fas fa-brain"></i> ML · Startups · Science</span>
+                    <span><i class="fab fa-python"></i> PyPI Contributor</span>
                 </div>
             </div>
         </section>
@@ -855,22 +852,34 @@
                 <h2>Work</h2>
             </div>
 
-            <div class="stats-row">
-                <div class="stat-item">
-                    <div class="num">2</div>
-                    <div class="lbl">Production Projects</div>
-                </div>
-                <div class="stat-item">
-                    <div class="num">0.706</div>
-                    <div class="lbl">ROC-AUC Top Model</div>
-                </div>
-                <div class="stat-item">
-                    <div class="num">1.8M+</div>
-                    <div class="lbl">Data Points Processed</div>
-                </div>
-            </div>
-
             <div class="project-list" style="margin-top:24px;">
+                <div class="project-item">
+                    <div class="project-top">
+                        <h3><i class="fas fa-cube"
+                                style="color:#2563EB;margin-right:8px;font-size:0.9rem;"></i>SmallGBM</h3>
+                        <span class="project-badge">PyPI · v1.0.1</span>
+                    </div>
+                    <p>
+                        <strong>Gradient boosting optimized for small datasets</strong> (n &lt; 1000).
+                        Published on PyPI as an open-source package. Designed from the ground up for data-scarce
+                        scenarios where XGBoost and LightGBM overfit. Features adaptive regularization,
+                        full data utilization, and graceful degradation under label noise.
+                        <strong>Outperforms major frameworks at n &lt; 500</strong> with scikit-learn compatible API.
+                    </p>
+                    <div class="project-tags">
+                        <span>Python</span><span>Gradient Boosting</span><span>PyPI</span>
+                        <span>Open Source</span><span>scikit-learn</span><span>Research</span>
+                    </div>
+                    <div>
+                        <a href="https://pypi.org/project/smallgbm/" target="_blank" class="project-link" style="margin-right:16px;">
+                            <i class="fab fa-python"></i> PyPI package <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="https://github.com/nsdmlk/SmallGBM" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> Source <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
                 <div class="project-item">
                     <div class="project-top">
                         <h3><i class="fas fa-car"
@@ -1003,9 +1012,9 @@
                 <div class="tech-col">
                     <h4>ML &amp; Data</h4>
                     <div class="tech-tags">
-                        <span>LightGBM</span><span>Scikit-learn</span><span>Pandas</span>
-                        <span>NumPy</span><span>XGBoost</span><span>Jupyter</span>
-                        <span>SMOTE</span><span>Matplotlib</span><span>Seaborn</span>
+                        <span>LightGBM</span><span>XGBoost</span><span>SmallGBM</span>
+                        <span>Scikit-learn</span><span>Pandas</span><span>NumPy</span>
+                        <span>Jupyter</span><span>SMOTE</span><span>Matplotlib</span><span>Seaborn</span>
                     </div>
                 </div>
                 <div class="tech-col">
@@ -1022,10 +1031,10 @@
                     </div>
                 </div>
                 <div class="tech-col">
-                    <h4>Tools</h4>
+                    <h4>Tools &amp; Ecosystem</h4>
                     <div class="tech-tags">
-                        <span>Git</span><span>Linux</span><span>CI/CD</span>
-                        <span>VS Code</span><span>Postman</span><span>Agile</span>
+                        <span>Git</span>
+                        <span>VS Code</span><span>PyPI</span><span>Google Colab</span>
                     </div>
                 </div>
             </div>
@@ -1096,7 +1105,7 @@
     </main>
 
     <footer class="footer">
-        · 2026 | Kanterville Ghost ·
+        2026 · Emelyanov Ilya
     </footer>
 
     <script>
