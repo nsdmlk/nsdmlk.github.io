@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Emelyanov Ilya — ML Engineer · Builder</title>
+    <title>Emelyanov Ilya — ML Engineer · Researcher</title>
     <meta name="description"
-        content="Emelyanov Ilya — ML Engineer and product builder. Student at Beijing Institute of Technology. Bridging research and startups." />
+        content="Emelyanov Ilya — ML Engineer, researcher, and product builder. Student at Beijing Institute of Technology. Publications on Zenodo, PyPI packages, and startups." />
     <meta name="author" content="Emelyanov Ilya" />
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23FAFAF8' stroke='%232563EB' stroke-width='3'/%3E%3Ctext x='50' y='64' font-family='Georgia,serif' font-size='44' fill='%232563EB' text-anchor='middle' font-style='italic'%3EE%3C/text%3E%3C/svg%3E" />
@@ -29,6 +29,8 @@
             --accent-hover: #1D4ED8;
             --gold: #D4A853;
             --gold-soft: rgba(212, 168, 83, 0.06);
+            --green: #059669;
+            --green-soft: rgba(5, 150, 105, 0.06);
             --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.02);
             --radius: 12px;
             --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -224,6 +226,15 @@
             background: #C49A3E;
         }
 
+        .btn-green {
+            background: var(--green);
+            color: #fff;
+        }
+
+        .btn-green:hover {
+            background: #047857;
+        }
+
         /* ===== SECTION HEADINGS ===== */
         .section-head {
             display: flex;
@@ -294,38 +305,6 @@
             text-align: center;
         }
 
-        /* ===== STATS ROW ===== */
-        .stats-row {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 14px;
-        }
-
-        .stat-item {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 22px 18px;
-            text-align: center;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .stat-item .num {
-            font-family: 'Instrument Serif', serif;
-            font-size: 2.2rem;
-            color: var(--accent);
-            line-height: 1;
-            margin-bottom: 4px;
-        }
-
-        .stat-item .lbl {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.04em;
-            color: var(--text-tertiary);
-            font-weight: 500;
-        }
-
         /* ===== PROJECTS ===== */
         .project-list {
             display: flex;
@@ -372,6 +351,11 @@
             color: #B8922E;
         }
 
+        .project-badge.green {
+            background: var(--green-soft);
+            color: #059669;
+        }
+
         .project-item p {
             font-size: 0.88rem;
             color: var(--text-secondary);
@@ -411,6 +395,63 @@
         }
 
         .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== PUBLICATIONS ===== */
+        .pub-item {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px 28px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .pub-item h3 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 6px;
+            color: var(--text);
+        }
+
+        .pub-authors {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+
+        .pub-venue {
+            font-size: 0.78rem;
+            color: var(--accent);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .pub-abstract {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 14px;
+        }
+
+        .pub-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .pub-links a {
+            font-size: 0.78rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .pub-links a:hover {
             text-decoration: underline;
         }
 
@@ -697,19 +738,6 @@
                 font-size: 0.85rem;
             }
 
-            .stats-row {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 8px;
-            }
-
-            .stat-item {
-                padding: 16px 10px;
-            }
-
-            .stat-item .num {
-                font-size: 1.6rem;
-            }
-
             .interest-cards {
                 grid-template-columns: 1fr;
             }
@@ -719,7 +747,7 @@
             }
 
             .contact-grid {
-                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-columns: 1fr 1fr;
             }
         }
 
@@ -735,19 +763,6 @@
 
             .section-head h2 {
                 font-size: 1.35rem;
-            }
-
-            .stats-row {
-                grid-template-columns: 1fr 1fr;
-                gap: 6px;
-            }
-
-            .stat-item .num {
-                font-size: 1.3rem;
-            }
-
-            .stat-item .lbl {
-                font-size: 0.6rem;
             }
 
             .tech-grid {
@@ -785,6 +800,7 @@
             <div class="nav-links" id="navLinks">
                 <a href="#about" class="active">About</a>
                 <a href="#work">Work</a>
+                <a href="#publications">Publications</a>
                 <a href="#education">Education</a>
                 <a href="#interests">Interests</a>
                 <a href="#tech">Tech</a>
@@ -803,8 +819,8 @@
             </div>
             <h1>Bridging <span>ML research</span> &amp; product engineering</h1>
             <p class="subtitle">
-                I build machine learning systems that solve real problems and design products people love.
-                Student at Beijing Institute of Technology, crafting at the intersection of data, code, and business.
+                I build machine learning systems, publish research, and design products people love.
+                Student at Beijing Institute of Technology, crafting at the intersection of data, science, and business.
             </p>
             <div class="hero-actions">
                 <a href="#work" class="btn btn-primary">
@@ -824,22 +840,23 @@
             </div>
             <div class="about-text">
                 <p>
-                    I'm <strong>Emelyanov Ilya</strong>, a <span class="accent">Machine Learning Engineer</span> and
-                    <strong>product builder</strong> based in <strong>Beijing, China</strong>.
+                    I'm <strong>Emelyanov Ilya</strong>, a <span class="accent">Machine Learning Engineer</span>,
+                    <strong>researcher</strong>, and <strong>product builder</strong> based in
+                    <strong>Beijing, China</strong>.
                     Currently <strong id="ageDisplay"></strong> and studying <strong>Computer Science</strong> at
                     the <strong>Beijing Institute of Technology</strong> on a full international scholarship.
                 </p>
                 <p>
-                    My work sits at the intersection of <strong>applied ML</strong> and <strong>product
+                    My work spans <strong>applied ML research</strong> and <strong>product
                         engineering</strong> —
-                    building models that solve real problems and designing systems people actually use.
-                    I believe in clean code, data-driven decisions, and the discipline of shipping.
+                    from publishing papers and open-source packages to building platforms people actually use.
+                    I believe in clean code, reproducible science, and the discipline of shipping.
                 </p>
                 <div class="about-meta">
                     <span><i class="fas fa-map-pin"></i> Beijing, China</span>
                     <span><i class="fas fa-graduation-cap"></i> BIT · CS · 2026–2030</span>
                     <span><i class="fas fa-trophy"></i> Full Scholarship</span>
-                    <span><i class="fas fa-brain"></i> ML · Startups · Science</span>
+                    <span><i class="fas fa-file-alt"></i> Published Researcher</span>
                     <span><i class="fab fa-python"></i> PyPI Contributor</span>
                 </div>
             </div>
@@ -852,35 +869,39 @@
                 <h2>Work</h2>
             </div>
 
-            <div class="project-list" style="margin-top:24px;">
+            <div class="project-list">
                 <div class="project-item">
                     <div class="project-top">
                         <h3><i class="fas fa-cube" style="color:#2563EB;margin-right:8px;font-size:0.9rem;"></i>SmallGBM
                         </h3>
-                        <span class="project-badge">PyPI · v1.0.1</span>
+                        <span class="project-badge green">Paper · Zenodo</span>
                     </div>
                     <p>
                         <strong>Gradient boosting optimized for small datasets</strong> (n &lt; 1000).
-                        Published on PyPI as an open-source package. Designed from the ground up for data-scarce
-                        scenarios where XGBoost and LightGBM overfit. Features adaptive regularization,
-                        full data utilization, and graceful degradation under label noise.
-                        <strong>Outperforms major frameworks at n &lt; 500</strong> with scikit-learn compatible API.
+                        Published on PyPI with accompanying research paper on Zenodo. Designed from the ground up for
+                        data-scarce scenarios where XGBoost and LightGBM overfit. Features Bayesian leaf regularization,
+                        noise stability, and scikit-learn compatible API.
+                        <strong>Outperforms major frameworks at n &lt; 500</strong> with superior noise stability.
                     </p>
                     <div class="project-tags">
                         <span>Python</span><span>Gradient Boosting</span><span>PyPI</span>
                         <span>Open Source</span><span>scikit-learn</span><span>Research</span>
                     </div>
                     <div>
+                        <a href="https://doi.org/10.5281/zenodo.21905013" target="_blank" class="project-link"
+                            style="margin-right:16px;">
+                            <i class="fas fa-file-alt"></i> Paper (DOI) <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="https://nsdmlk.github.io/SmallGBM" target="_blank" class="project-link"
+                            style="margin-right:16px;">
+                            <i class="fas fa-globe"></i> Website <i class="fas fa-arrow-right"></i>
+                        </a>
                         <a href="https://pypi.org/project/smallgbm/" target="_blank" class="project-link"
                             style="margin-right:16px;">
-                            <i class="fab fa-python"></i> PyPI package <i class="fas fa-arrow-right"></i>
+                            <i class="fab fa-python"></i> PyPI <i class="fas fa-arrow-right"></i>
                         </a>
                         <a href="https://github.com/nsdmlk/SmallGBM" target="_blank" class="project-link">
                             <i class="fab fa-github"></i> Source <i class="fas fa-arrow-right"></i>
-                        </a>
-                        <a href="https://nsdmlk.github.io/SmallGBM" target="_blank" class="project-link"
-                            style="margin-left:16px;">
-                            <i class="fas fa-globe"></i> Website <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
@@ -927,6 +948,45 @@
                     </div>
                     <a href="https://github.com/nsdmlk" target="_blank" class="project-link">
                         <i class="fab fa-github"></i> View GitHub <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- PUBLICATIONS -->
+        <section id="publications">
+            <div class="section-head">
+                <i class="fas fa-file-alt"></i>
+                <h2>Publications</h2>
+            </div>
+
+            <div class="pub-item">
+                <h3>SmallGBM: Gradient Boosting with Bayesian Leaf Regularization for Small-Sample Tabular Data</h3>
+                <p class="pub-authors">
+                    <strong>Emelyanov, I.</strong>
+                </p>
+                <p class="pub-venue">
+                    <i class="fas fa-book-open"></i> Zenodo (Preprint) · August 2026 · DOI: 10.5281/zenodo.21905013
+                </p>
+                <p class="pub-abstract">
+                    Gradient boosting machines (GBMs) are state-of-the-art for tabular data, yet leading
+                    implementations—XGBoost, LightGBM—are optimized for large-sample regimes and overfit severely
+                    on datasets with fewer than 1000 rows. We introduce SmallGBM, a gradient boosting library
+                    designed from first principles for small-sample tabular data. SmallGBM replaces standard leaf-weight
+                    estimation with a Bayesian shrinkage estimator and removes variance-inducing mechanisms like
+                    bootstrap sampling. Benchmarked against XGBoost, LightGBM, and Random Forest on datasets with
+                    20–500 training samples, SmallGBM shows superior stability under label noise and near-identical
+                    performance on clean data.
+                </p>
+                <div class="pub-links">
+                    <a href="https://doi.org/10.5281/zenodo.21905013" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> DOI
+                    </a>
+                    <a href="https://github.com/nsdmlk/SmallGBM" target="_blank">
+                        <i class="fab fa-github"></i> Code
+                    </a>
+                    <a href="https://pypi.org/project/smallgbm/" target="_blank">
+                        <i class="fab fa-python"></i> PyPI
                     </a>
                 </div>
             </div>
@@ -998,10 +1058,10 @@
                     <h3>Science &amp; Research</h3>
                     <p>
                         I'm drawn to the <strong>scientific method</strong> — rigorous thinking, data-driven decisions,
-                        and the elegance of a well-crafted model. Exploring <strong>fraud detection, user behavior
-                            modeling, and applied ML</strong>. Mathematics is the foundation: probability theory, linear
-                        algebra,
-                        optimization. The best startups emerge from <strong>deep research</strong>.
+                        and the elegance of a well-crafted model. My research on
+                        <strong>SmallGBM</strong> formalizes this:
+                        Bayesian regularization for gradient boosting on small data, published on Zenodo.
+                        Mathematics is the foundation; the best startups emerge from <strong>deep research</strong>.
                     </p>
                 </div>
             </div>
@@ -1038,8 +1098,7 @@
                 <div class="tech-col">
                     <h4>Tools &amp; Ecosystem</h4>
                     <div class="tech-tags">
-                        <span>Git</span>
-                        <span>VS Code</span><span>PyPI</span><span>Google Colab</span>
+                        <span>Git</span><span>VS Code</span><span>PyPI</span><span>Google Colab</span>
                     </div>
                 </div>
             </div>
