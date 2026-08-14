@@ -226,15 +226,6 @@
             background: #C49A3E;
         }
 
-        .btn-green {
-            background: var(--green);
-            color: #fff;
-        }
-
-        .btn-green:hover {
-            background: #047857;
-        }
-
         /* ===== SECTION HEADINGS ===== */
         .section-head {
             display: flex;
@@ -396,6 +387,55 @@
 
         .project-link:hover {
             text-decoration: underline;
+        }
+
+        /* ===== BENCHMARK TABLE ===== */
+        .benchmark-wrap {
+            overflow-x: auto;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--card);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 16px;
+        }
+
+        .benchmark-wrap table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.82rem;
+        }
+
+        .benchmark-wrap th,
+        .benchmark-wrap td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .benchmark-wrap th {
+            font-weight: 600;
+            color: var(--text);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            background: #FAFAF8;
+        }
+
+        .benchmark-wrap td {
+            color: var(--text-secondary);
+        }
+
+        .benchmark-wrap tr:last-child td {
+            border-bottom: none;
+        }
+
+        .benchmark-wrap .highlight-row {
+            background: var(--accent-soft);
+        }
+
+        .benchmark-wrap .highlight-row td {
+            color: var(--accent);
+            font-weight: 600;
         }
 
         /* ===== PUBLICATIONS ===== */
@@ -874,21 +914,56 @@
                     <div class="project-top">
                         <h3><i class="fas fa-cube" style="color:#2563EB;margin-right:8px;font-size:0.9rem;"></i>SmallGBM
                         </h3>
-                        <span class="project-badge green">Paper · Zenodo</span>
+                        <span class="project-badge green">v1.3.0 · Paper</span>
                     </div>
                     <p>
-                        <strong>Gradient boosting optimized for small datasets</strong> (n &lt; 1000).
-                        Published on PyPI with accompanying research paper on Zenodo. Designed from the ground up for
-                        data-scarce scenarios where XGBoost and LightGBM overfit. Features Bayesian leaf regularization,
-                        noise stability, and scikit-learn compatible API.
-                        <strong>Outperforms major frameworks at n &lt; 500</strong> with superior noise stability.
+                        <strong>Gradient boosting for small tabular data</strong> (n &lt; 1000).
+                        Statistical parity with XGBoost on 27 datasets (15 synthetic + 12 real-world),
+                        <strong>lowest variance</strong> among all models, outperforms LightGBM by +1.1%.
+                        Published on PyPI and Zenodo. Features robust leaf weights, column subsampling,
+                        and uncertainty estimates. scikit-learn compatible.
                     </p>
                     <div class="project-tags">
                         <span>Python</span><span>Gradient Boosting</span><span>PyPI</span>
                         <span>Open Source</span><span>scikit-learn</span><span>Research</span>
                     </div>
+
+                    <div class="benchmark-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Model</th>
+                                    <th>AUC</th>
+                                    <th>Std</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="highlight-row">
+                                    <td>SmallGBM</td>
+                                    <td>0.9157</td>
+                                    <td>±0.0723</td>
+                                </tr>
+                                <tr>
+                                    <td>XGBoost</td>
+                                    <td>0.9156</td>
+                                    <td>±0.0792</td>
+                                </tr>
+                                <tr>
+                                    <td>RandomForest</td>
+                                    <td>0.9140</td>
+                                    <td>±0.0788</td>
+                                </tr>
+                                <tr>
+                                    <td>LightGBM</td>
+                                    <td>0.9047</td>
+                                    <td>±0.0752</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
                     <div>
-                        <a href="https://doi.org/10.5281/zenodo.21905013" target="_blank" class="project-link"
+                        <a href="https://doi.org/10.5281/zenodo.21934674" target="_blank" class="project-link"
                             style="margin-right:16px;">
                             <i class="fas fa-file-alt"></i> Paper (DOI) <i class="fas fa-arrow-right"></i>
                         </a>
@@ -946,7 +1021,7 @@
                         <span>Python</span><span>Flask</span><span>Supabase</span>
                         <span>AI Integration</span><span>Product Design</span><span>Vanilla JS</span>
                     </div>
-                    <a href="https://github.com/nsdmlk" target="_blank" class="project-link">
+                    <a href="https://github.com/qqwozz/Rubium" target="_blank" class="project-link">
                         <i class="fab fa-github"></i> View GitHub <i class="fas fa-arrow-right"></i>
                     </a>
                 </div>
@@ -961,25 +1036,23 @@
             </div>
 
             <div class="pub-item">
-                <h3>SmallGBM: Gradient Boosting with Bayesian Leaf Regularization for Small-Sample Tabular Data</h3>
+                <h3>SmallGBM: Gradient Boosting with Robust Leaf Regularization for Small-Sample Tabular Data</h3>
                 <p class="pub-authors">
                     <strong>Emelyanov, I.</strong>
                 </p>
                 <p class="pub-venue">
-                    <i class="fas fa-book-open"></i> Zenodo (Preprint) · August 2026 · DOI: 10.5281/zenodo.21905013
+                    <i class="fas fa-book-open"></i> Zenodo (Preprint) · August 2026 · DOI: 10.5281/zenodo.21934674
                 </p>
                 <p class="pub-abstract">
-                    Gradient boosting machines (GBMs) are state-of-the-art for tabular data, yet leading
-                    implementations—XGBoost, LightGBM—are optimized for large-sample regimes and overfit severely
-                    on datasets with fewer than 1000 rows. We introduce SmallGBM, a gradient boosting library
-                    designed from first principles for small-sample tabular data. SmallGBM replaces standard leaf-weight
-                    estimation with a Bayesian shrinkage estimator and removes variance-inducing mechanisms like
-                    bootstrap sampling. Benchmarked against XGBoost, LightGBM, and Random Forest on datasets with
-                    20–500 training samples, SmallGBM shows superior stability under label noise and near-identical
-                    performance on clean data.
+                    Gradient boosting machines are state-of-the-art for tabular data, yet leading implementations
+                    overfit on datasets with fewer than 1000 rows. SmallGBM uses robust leaf weights — median
+                    estimation for small leaves, inverse-distance weighted means, and signal-adaptive shrinkage —
+                    to achieve <strong>statistical parity with XGBoost</strong> and the <strong>lowest variance</strong>
+                    across 27 benchmark datasets. Benchmarked on 15 synthetic and 12 real-world datasets
+                    with 5-fold cross-validation.
                 </p>
                 <div class="pub-links">
-                    <a href="https://doi.org/10.5281/zenodo.21905013" target="_blank">
+                    <a href="https://doi.org/10.5281/zenodo.21934674" target="_blank">
                         <i class="fas fa-external-link-alt"></i> DOI
                     </a>
                     <a href="https://github.com/nsdmlk/SmallGBM" target="_blank">
@@ -1060,7 +1133,7 @@
                         I'm drawn to the <strong>scientific method</strong> — rigorous thinking, data-driven decisions,
                         and the elegance of a well-crafted model. My research on
                         <strong>SmallGBM</strong> formalizes this:
-                        Bayesian regularization for gradient boosting on small data, published on Zenodo.
+                        robust leaf regularization for gradient boosting on small data, validated across 27 datasets.
                         Mathematics is the foundation; the best startups emerge from <strong>deep research</strong>.
                     </p>
                 </div>
