@@ -55,7 +55,6 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* ===== NAV ===== */
         .nav-bar {
             position: sticky;
             top: 0;
@@ -119,7 +118,6 @@
             padding: 4px;
         }
 
-        /* ===== LAYOUT ===== */
         .container {
             max-width: var(--max-width);
             margin: 0 auto;
@@ -129,7 +127,6 @@
             gap: 72px;
         }
 
-        /* ===== HERO ===== */
         .hero-section {
             text-align: center;
             padding-top: 16px;
@@ -226,7 +223,6 @@
             background: #C49A3E;
         }
 
-        /* ===== SECTION HEADINGS ===== */
         .section-head {
             display: flex;
             align-items: center;
@@ -247,7 +243,6 @@
             color: var(--text);
         }
 
-        /* ===== ABOUT ===== */
         .about-text {
             font-size: 0.95rem;
             color: var(--text-secondary);
@@ -296,7 +291,6 @@
             text-align: center;
         }
 
-        /* ===== PROJECTS ===== */
         .project-list {
             display: flex;
             flex-direction: column;
@@ -389,7 +383,6 @@
             text-decoration: underline;
         }
 
-        /* ===== BENCHMARK TABLE ===== */
         .benchmark-wrap {
             overflow-x: auto;
             border: 1px solid var(--border);
@@ -438,7 +431,6 @@
             font-weight: 600;
         }
 
-        /* ===== PUBLICATIONS ===== */
         .pub-item {
             background: var(--card);
             border: 1px solid var(--border);
@@ -495,7 +487,6 @@
             text-decoration: underline;
         }
 
-        /* ===== EDUCATION ===== */
         .edu-list {
             display: flex;
             flex-direction: column;
@@ -565,7 +556,6 @@
             font-weight: 500;
         }
 
-        /* ===== INTERESTS ===== */
         .interest-cards {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -619,7 +609,6 @@
             font-weight: 600;
         }
 
-        /* ===== TECH ===== */
         .tech-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -650,7 +639,6 @@
             color: var(--text-secondary);
         }
 
-        /* ===== DEAL ===== */
         .deal-block {
             text-align: center;
             background: var(--card);
@@ -681,7 +669,6 @@
             flex-wrap: wrap;
         }
 
-        /* ===== CONTACT ===== */
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -727,7 +714,6 @@
             font-weight: 500;
         }
 
-        /* ===== FOOTER ===== */
         .footer {
             text-align: center;
             padding: 28px 24px;
@@ -741,7 +727,6 @@
             margin-right: 5px;
         }
 
-        /* ===== RESPONSIVE ===== */
         @media (max-width: 768px) {
             .container {
                 padding: 40px 18px 60px;
@@ -852,7 +837,6 @@
 
     <main class="container">
 
-        <!-- HERO -->
         <section class="hero-section">
             <div class="hero-badge">
                 <i class="fas fa-asterisk"></i> BIT · School of CS · '30
@@ -872,7 +856,6 @@
             </div>
         </section>
 
-        <!-- ABOUT -->
         <section id="about">
             <div class="section-head">
                 <i class="fas fa-user"></i>
@@ -902,7 +885,6 @@
             </div>
         </section>
 
-        <!-- WORK -->
         <section id="work">
             <div class="section-head">
                 <i class="fas fa-folder-open"></i>
@@ -914,14 +896,14 @@
                     <div class="project-top">
                         <h3><i class="fas fa-cube" style="color:#2563EB;margin-right:8px;font-size:0.9rem;"></i>SmallGBM
                         </h3>
-                        <span class="project-badge green">v1.3.0 · Paper</span>
+                        <span class="project-badge green">v1.4.0 · Paper</span>
                     </div>
                     <p>
                         <strong>Gradient boosting for small tabular data</strong> (n &lt; 1000).
-                        Statistical parity with XGBoost on 27 datasets (15 synthetic + 12 real-world),
-                        <strong>lowest variance</strong> among all models, outperforms LightGBM by +1.1%.
-                        Published on PyPI and Zenodo. Features robust leaf weights, column subsampling,
-                        and uncertainty estimates. scikit-learn compatible.
+                        <strong>Outperforms XGBoost by +0.85%</strong>, LightGBM by +1.9%, and has the
+                        <strong>lowest variance</strong> among all models on 27 benchmark datasets.
+                        Features robust leaf weights (median + adaptive shrinkage) and stochastic split selection.
+                        Published on PyPI and Zenodo.
                     </p>
                     <div class="project-tags">
                         <span>Python</span><span>Gradient Boosting</span><span>PyPI</span>
@@ -940,8 +922,8 @@
                             <tbody>
                                 <tr class="highlight-row">
                                     <td>SmallGBM</td>
-                                    <td>0.9157</td>
-                                    <td>±0.0723</td>
+                                    <td>0.9241</td>
+                                    <td>±0.0676</td>
                                 </tr>
                                 <tr>
                                     <td>XGBoost</td>
@@ -1008,27 +990,37 @@
                     <div class="project-top">
                         <h3><i class="fas fa-rocket" style="color:#D4A853;margin-right:8px;font-size:0.9rem;"></i>Rubium
                             — Exam Prep Ecosystem</h3>
-                        <span class="project-badge gold">Startup</span>
+                        <span class="project-badge gold">Open Source · Apache 2.0</span>
                     </div>
                     <p>
-                        <strong>Full-stack educational platform</strong> for exam preparation with AI-powered hints,
-                        custom mock exams, progress analytics, and a collaborative notebook system.
-                        Built with <strong>Python (Flask)</strong> for AI proxy, Supabase, and vanilla JS frontend.
-                        Designed the architecture, API contracts, and AI integration strategy (DeepSeek).
-                        <strong>Product thinking:</strong> user flows, gamification, community features.
+                        <strong>Open-source educational platform</strong> for exam preparation (ЕГЭ/ОГЭ).
+                        Built by students, for students — a living product with real users.
+                        Frontend: <strong>Vue 3, Vite, Pinia, TipTap</strong>. Backend: <strong>Go (Gin) +
+                            Python</strong>.
+                        Database: <strong>Supabase (PostgreSQL)</strong>. AI-powered hints, custom mock exams,
+                        progress analytics, and collaborative notebooks with KaTeX rendering.
+                        <strong>Lead Developer</strong> in a 3-person team.
                     </p>
                     <div class="project-tags">
-                        <span>Python</span><span>Flask</span><span>Supabase</span>
-                        <span>AI Integration</span><span>Product Design</span><span>Vanilla JS</span>
+                        <span>Vue 3</span><span>Go</span><span>Python</span><span>Supabase</span>
+                        <span>TipTap</span><span>KaTeX</span><span>AI Integration</span><span>Open Source</span>
                     </div>
-                    <a href="https://github.com/qqwozz/Rubium" target="_blank" class="project-link">
-                        <i class="fab fa-github"></i> View GitHub <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div>
+                        <a href="https://github.com/qqwozz/ex_prac" target="_blank" class="project-link"
+                            style="margin-right:16px;">
+                            <i class="fab fa-github"></i> Source <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="https://t.me/rubium_edu" target="_blank" class="project-link"
+                            style="margin-right:16px;">
+                            <i class="fab fa-telegram-plane"></i> News <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="https://t.me/+5KS-7mS6aDw0NDJi" target="_blank" class="project-link">
+                            <i class="fas fa-users"></i> Community <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
-            </div>
         </section>
 
-        <!-- PUBLICATIONS -->
         <section id="publications">
             <div class="section-head">
                 <i class="fas fa-file-alt"></i>
@@ -1044,12 +1036,12 @@
                     <i class="fas fa-book-open"></i> Zenodo (Preprint) · August 2026 · DOI: 10.5281/zenodo.21934674
                 </p>
                 <p class="pub-abstract">
-                    Gradient boosting machines are state-of-the-art for tabular data, yet leading implementations
-                    overfit on datasets with fewer than 1000 rows. SmallGBM uses robust leaf weights — median
-                    estimation for small leaves, inverse-distance weighted means, and signal-adaptive shrinkage —
-                    to achieve <strong>statistical parity with XGBoost</strong> and the <strong>lowest variance</strong>
-                    across 27 benchmark datasets. Benchmarked on 15 synthetic and 12 real-world datasets
-                    with 5-fold cross-validation.
+                    Gradient boosting machines overfit on datasets with fewer than 1000 rows. SmallGBM uses
+                    robust leaf weights — median estimation for small leaves and signal-adaptive shrinkage —
+                    combined with stochastic split selection (5 random thresholds per feature) to outperform
+                    XGBoost and LightGBM on 27 benchmark datasets (15 synthetic + 12 real-world).
+                    Achieves <strong>state-of-the-art AUC (0.9241)</strong> with the <strong>lowest variance</strong>
+                    (±0.0676) among all compared models.
                 </p>
                 <div class="pub-links">
                     <a href="https://doi.org/10.5281/zenodo.21934674" target="_blank">
@@ -1065,7 +1057,6 @@
             </div>
         </section>
 
-        <!-- EDUCATION -->
         <section id="education">
             <div class="section-head">
                 <i class="fas fa-graduation-cap"></i>
@@ -1102,7 +1093,6 @@
             </div>
         </section>
 
-        <!-- INTERESTS -->
         <section id="interests">
             <div class="section-head">
                 <i class="fas fa-compass"></i>
@@ -1133,14 +1123,14 @@
                         I'm drawn to the <strong>scientific method</strong> — rigorous thinking, data-driven decisions,
                         and the elegance of a well-crafted model. My research on
                         <strong>SmallGBM</strong> formalizes this:
-                        robust leaf regularization for gradient boosting on small data, validated across 27 datasets.
-                        Mathematics is the foundation; the best startups emerge from <strong>deep research</strong>.
+                        robust leaf regularization and stochastic splits for gradient boosting on small data,
+                        validated across 27 datasets. Mathematics is the foundation; the best startups emerge from
+                        <strong>deep research</strong>.
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- TECH -->
         <section id="tech">
             <div class="section-head">
                 <i class="fas fa-cubes"></i>
@@ -1177,7 +1167,6 @@
             </div>
         </section>
 
-        <!-- DEAL -->
         <section id="deal">
             <div class="section-head">
                 <i class="fas fa-handshake"></i>
@@ -1209,7 +1198,6 @@
             </div>
         </section>
 
-        <!-- CONTACT -->
         <section id="contact">
             <div class="section-head">
                 <i class="fas fa-envelope"></i>
@@ -1246,7 +1234,6 @@
     </footer>
 
     <script>
-        // Age
         (function () {
             const birth = new Date(2007, 10, 18);
             const now = new Date();
@@ -1257,7 +1244,6 @@
             if (el) el.textContent = age + ' years old';
         })();
 
-        // Nav toggle
         const toggle = document.getElementById('navToggle');
         const navLinks = document.getElementById('navLinks');
         const links = navLinks.querySelectorAll('a');
@@ -1278,7 +1264,6 @@
             });
         });
 
-        // Active link on scroll
         const sections = document.querySelectorAll('section[id]');
         window.addEventListener('scroll', () => {
             let current = '';
@@ -1293,7 +1278,6 @@
             });
         });
 
-        // Smooth scroll
         links.forEach(l => {
             l.addEventListener('click', function (e) {
                 const target = document.querySelector(this.getAttribute('href'));
