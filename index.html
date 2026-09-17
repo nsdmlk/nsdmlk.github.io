@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Emelyanov Ilya — ML Engineer · Researcher</title>
     <meta name="description"
-        content="Emelyanov Ilya — ML Engineer, researcher, and product builder. Student at Beijing Institute of Technology. Publications on Zenodo, PyPI packages, and startups." />
+        content="Emelyanov Ilya — ML Engineer and researcher building tools for small-data learning. SmallGBM, SmallMLP, and open-source packages on PyPI. Student at Beijing Institute of Technology." />
     <meta name="author" content="Emelyanov Ilya" />
     <link rel="icon" type="image/svg+xml"
         href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23FAFAF8' stroke='%232563EB' stroke-width='3'/%3E%3Ctext x='50' y='64' font-family='Georgia,serif' font-size='44' fill='%232563EB' text-anchor='middle' font-style='italic'%3EE%3C/text%3E%3C/svg%3E" />
@@ -168,7 +168,7 @@
         .hero-section .subtitle {
             font-size: 0.95rem;
             color: var(--text-secondary);
-            max-width: 480px;
+            max-width: 500px;
             margin: 0 auto 28px;
             line-height: 1.7;
         }
@@ -437,6 +437,11 @@
             border-radius: var(--radius);
             padding: 24px 28px;
             box-shadow: var(--shadow-sm);
+            margin-bottom: 16px;
+        }
+
+        .pub-item:last-child {
+            margin-bottom: 0;
         }
 
         .pub-item h3 {
@@ -458,6 +463,10 @@
             color: var(--accent);
             margin-bottom: 10px;
             font-weight: 500;
+        }
+
+        .pub-venue.pending {
+            color: var(--gold);
         }
 
         .pub-abstract {
@@ -839,12 +848,12 @@
 
         <section class="hero-section">
             <div class="hero-badge">
-                <i class="fas fa-asterisk"></i> BIT · School of CS · '30
+                BIT · School of CS · '30
             </div>
             <h1>Bridging <span>ML research</span> &amp; product engineering</h1>
             <p class="subtitle">
-                I build machine learning systems, publish research, and design products people love.
-                Student at Beijing Institute of Technology, crafting at the intersection of data, science, and business.
+                I build machine learning systems for small data, publish research, and design products people love.
+                Student at Beijing Institute of Technology, working at the intersection of statistics, code, and business.
             </p>
             <div class="hero-actions">
                 <a href="#work" class="btn btn-primary">
@@ -870,9 +879,12 @@
                     the <strong>Beijing Institute of Technology</strong> on a full international scholarship.
                 </p>
                 <p>
-                    My work spans <strong>applied ML research</strong> and <strong>product
-                        engineering</strong> —
-                    from publishing papers and open-source packages to building platforms people actually use.
+                    My research focuses on <strong>small-data learning</strong> — a niche the big frameworks ignore.
+                    I build open-source packages (<strong>SmallGBM</strong>, <strong>SmallMLP</strong>) that make
+                    gradient boosting and non-parametric methods work when n is measured in hundreds, not millions.
+                    Alongside that, I build products — <strong>Rubium</strong>, an educational platform, is live with real users.
+                </p>
+                <p>
                     I believe in clean code, reproducible science, and the discipline of shipping.
                 </p>
                 <div class="about-meta">
@@ -965,6 +977,70 @@
 
                 <div class="project-item">
                     <div class="project-top">
+                        <h3><i class="fas fa-wave-square" style="color:#2563EB;margin-right:8px;font-size:0.9rem;"></i>SmallMLP
+                        </h3>
+                        <span class="project-badge green">v1.0.0 · Preprint</span>
+                    </div>
+                    <p>
+                        <strong>Non-parametric regression and classification for small nonlinear data</strong> (n &lt; 500),
+                        with calibrated prediction intervals. Learns a per-feature kernel bandwidth via leave-one-out
+                        optimization — no manual tuning. Uses <strong>weighted conformal prediction</strong> for
+                        finite-sample coverage guarantees.
+                        <strong>25/45 regression wins</strong> against standard MLPs,
+                        <strong>19% narrower intervals</strong> than split conformal at equal coverage.
+                    </p>
+                    <div class="project-tags">
+                        <span>Python</span><span>PyTorch</span><span>Kernel Methods</span>
+                        <span>Conformal Prediction</span><span>PyPI</span><span>Research</span>
+                    </div>
+
+                    <div class="benchmark-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Model</th>
+                                    <th>Mean MAE</th>
+                                    <th>Wins / 45</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="highlight-row">
+                                    <td>SmallMLP</td>
+                                    <td>11.39</td>
+                                    <td>25</td>
+                                </tr>
+                                <tr>
+                                    <td>MLP (256, 128)</td>
+                                    <td>12.44</td>
+                                    <td>11</td>
+                                </tr>
+                                <tr>
+                                    <td>KNN (k=10)</td>
+                                    <td>19.13</td>
+                                    <td>5</td>
+                                </tr>
+                                <tr>
+                                    <td>KNN (k=5)</td>
+                                    <td>18.89</td>
+                                    <td>2</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div>
+                        <a href="https://pypi.org/project/smallmlp/" target="_blank" class="project-link"
+                            style="margin-right:16px;">
+                            <i class="fab fa-python"></i> PyPI <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="https://github.com/nsdmlk/smallmlp" target="_blank" class="project-link">
+                            <i class="fab fa-github"></i> Source <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-top">
                         <h3><i class="fas fa-car"
                                 style="color:#2563EB;margin-right:8px;font-size:0.9rem;"></i>SberCarSubscription ML</h3>
                         <span class="project-badge">ROC-AUC 0.706</span>
@@ -989,24 +1065,24 @@
                 <div class="project-item">
                     <div class="project-top">
                         <h3><i class="fas fa-rocket" style="color:#D4A853;margin-right:8px;font-size:0.9rem;"></i>Rubium
-                            — Exam Prep Ecosystem</h3>
+                            — Educational Environment</h3>
                         <span class="project-badge gold">Open Source · Apache 2.0</span>
                     </div>
                     <p>
-                        <strong>Open-source educational platform</strong> for exam preparation (ЕГЭ/ОГЭ).
+                        <strong>Open-source educational platform</strong>.
                         Built by students, for students — a living product with real users.
                         Frontend: <strong>Vue 3, Vite, Pinia, TipTap</strong>. Backend: <strong>Go (Gin) +
                             Python</strong>.
                         Database: <strong>Supabase (PostgreSQL)</strong>. AI-powered hints, custom mock exams,
                         progress analytics, and collaborative notebooks with KaTeX rendering.
-                        <strong>Lead Developer</strong> in a 3-person team.
+                        <strong>Lead Developer</strong> in a 4-person team.
                     </p>
                     <div class="project-tags">
                         <span>Vue 3</span><span>Go</span><span>Python</span><span>Supabase</span>
                         <span>TipTap</span><span>KaTeX</span><span>AI Integration</span><span>Open Source</span>
                     </div>
                     <div>
-                        <a href="https://github.com/qqwozz/ex_prac" target="_blank" class="project-link"
+                        <a href="https://github.com/qqwozz/Rubium" target="_blank" class="project-link"
                             style="margin-right:16px;">
                             <i class="fab fa-github"></i> Source <i class="fas fa-arrow-right"></i>
                         </a>
@@ -1015,10 +1091,11 @@
                             <i class="fab fa-telegram-plane"></i> News <i class="fas fa-arrow-right"></i>
                         </a>
                         <a href="https://t.me/+5KS-7mS6aDw0NDJi" target="_blank" class="project-link">
-                            <i class="fas fa-users"></i> Community <i class="fas fa-arrow-right"></i>
+                            <i class="fas fa-users"></i> Rubium Tech <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
+            </div>
         </section>
 
         <section id="publications">
@@ -1055,6 +1132,32 @@
                     </a>
                 </div>
             </div>
+
+            <div class="pub-item">
+                <h3>SmallMLP: Non-parametric Regression and Classification for Small Nonlinear Data with Conformal Prediction Intervals</h3>
+                <p class="pub-authors">
+                    <strong>Emelyanov, I.</strong>
+                </p>
+                <p class="pub-venue pending">
+                    <i class="fas fa-hourglass-half"></i> Preprint in preparation · arXiv link coming
+                </p>
+                <p class="pub-abstract">
+                    Standard MLPs overfit on small nonlinear datasets; kernel methods require manual bandwidth
+                    selection; Bayesian approaches scale poorly. SmallMLP learns a per-feature kernel bandwidth
+                    via leave-one-out optimization and produces calibrated prediction intervals through
+                    <strong>weighted conformal prediction</strong>. On 45 small regression datasets it wins
+                    <strong>25/45</strong> against standard MLPs, and its intervals are <strong>19% narrower</strong>
+                    than split conformal at equal coverage (31/32 wins among valid datasets).
+                </p>
+                <div class="pub-links">
+                    <a href="https://github.com/nsdmlk/smallmlp" target="_blank">
+                        <i class="fab fa-github"></i> Code
+                    </a>
+                    <a href="https://pypi.org/project/smallmlp/" target="_blank">
+                        <i class="fab fa-python"></i> PyPI
+                    </a>
+                </div>
+            </div>
         </section>
 
         <section id="education">
@@ -1077,19 +1180,6 @@
                         <i class="fas fa-trophy"></i> BIT International Student Scholarship — full tuition + dormitory
                     </div>
                 </div>
-                <div class="edu-item">
-                    <div class="edu-top">
-                        <h3>Skillbox · Machine Learning</h3>
-                        <span class="edu-year">2024 — 2026</span>
-                    </div>
-                    <div class="edu-sub">Professional retraining · Data Science &amp; ML Engineering</div>
-                    <div class="edu-desc">
-                        <strong>18-month intensive program:</strong> supervised &amp; unsupervised learning, time
-                        series,
-                        NLP with transformers, MLOps, production-grade model deployment.
-                        Final project: <strong>real-time fraud detection system</strong> with 94% precision.
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -1109,7 +1199,7 @@
                         features,
                         but thinking through user needs, architecture, and growth. My project <strong>Rubium</strong>
                         reflects this:
-                        a full educational ecosystem designed, architected, and shipped with a friend.
+                        a full educational ecosystem designed, architected, and shipped with a team.
                         I admire the engineer-led, product-obsessed approach. I want to <strong>build things that
                             matter.</strong>
                     </p>
@@ -1121,10 +1211,9 @@
                     <h3>Science &amp; Research</h3>
                     <p>
                         I'm drawn to the <strong>scientific method</strong> — rigorous thinking, data-driven decisions,
-                        and the elegance of a well-crafted model. My research on
-                        <strong>SmallGBM</strong> formalizes this:
-                        robust leaf regularization and stochastic splits for gradient boosting on small data,
-                        validated across 27 datasets. Mathematics is the foundation; the best startups emerge from
+                        and the elegance of a well-crafted model. My research program focuses on
+                        <strong>small-data learning</strong>: robust gradient boosting (SmallGBM) and conformal
+                        non-parametric methods (SmallMLP). Mathematics is the foundation; the best startups emerge from
                         <strong>deep research</strong>.
                     </p>
                 </div>
@@ -1140,16 +1229,18 @@
                 <div class="tech-col">
                     <h4>ML &amp; Data</h4>
                     <div class="tech-tags">
-                        <span>LightGBM</span><span>XGBoost</span><span>SmallGBM</span>
-                        <span>Scikit-learn</span><span>Pandas</span><span>NumPy</span>
-                        <span>Jupyter</span><span>SMOTE</span><span>Matplotlib</span><span>Seaborn</span>
+                        <span>PyTorch</span><span>LightGBM</span><span>XGBoost</span>
+                        <span>SmallGBM</span><span>SmallMLP</span><span>Scikit-learn</span>
+                        <span>Pandas</span><span>NumPy</span><span>Jupyter</span>
+                        <span>Matplotlib</span>
                     </div>
                 </div>
                 <div class="tech-col">
                     <h4>Backend &amp; API</h4>
                     <div class="tech-tags">
-                        <span>FastAPI</span><span>Flask</span><span>PostgreSQL</span>
-                        <span>Supabase</span><span>Docker</span><span>REST API</span>
+                        <span>FastAPI</span><span>Flask</span><span>Go (Gin)</span>
+                        <span>PostgreSQL</span><span>Supabase</span><span>Docker</span>
+                        <span>REST API</span>
                     </div>
                 </div>
                 <div class="tech-col">
@@ -1161,7 +1252,8 @@
                 <div class="tech-col">
                     <h4>Tools &amp; Ecosystem</h4>
                     <div class="tech-tags">
-                        <span>Git</span><span>VS Code</span><span>PyPI</span><span>Google Colab</span>
+                        <span>Git</span><span>VS Code</span><span>PyPI</span>
+                        <span>Zenodo</span><span>Google Colab</span>
                     </div>
                 </div>
             </div>
@@ -1176,7 +1268,7 @@
                 <h3>Looking for collaborators &amp; opportunities</h3>
                 <p>
                     I'm open to <strong>research collaborations</strong>, <strong>startup partnerships</strong>,
-                    and <strong>engineering challenges</strong> in ML and product development.
+                    and <strong>engineering challenges</strong> in small-data ML and product development.
                     If you're building something ambitious — reach out.
                 </p>
                 <div class="deal-actions">
@@ -1189,11 +1281,8 @@
                 </div>
             </div>
             <div class="deal-actions" style="margin-top:12px;">
-                <a href="data/Emelyanov_Ilya_Resume.pdf" target="_blank" class="btn btn-outline" download>
-                    <i class="fas fa-download"></i> Download CV (EN)
-                </a>
-                <a href="data/Emelyanov_Ilya_Resume_RU.pdf" target="_blank" class="btn btn-outline" download>
-                    <i class="fas fa-download"></i> Download CV (RU)
+                <a href="data/Ilya_Emelyanov_Research_CV (1).pdf" target="_blank" class="btn btn-outline" download>
+                    <i class="fas fa-download"></i> Download CV
                 </a>
             </div>
         </section>
