@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Newsreader, JetBrains_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -8,11 +8,11 @@ const inter = Inter({
   display: "swap",
 });
 
-const newsreader = Newsreader({
+const editorialSerif = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-serif",
   style: ["normal", "italic"],
-  weight: ["400", "500"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
@@ -37,10 +37,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${newsreader.variable} ${jetbrainsMono.variable} dark`}
+      className={`${inter.variable} ${editorialSerif.variable} ${jetbrainsMono.variable} dark`}
     >
       <body className="bg-obsidian text-ivory font-sans antialiased selection:bg-brass/20 selection:text-brass min-h-screen relative overflow-x-hidden">
-        {}
         <div
           aria-hidden="true"
           className="pointer-events-none fixed inset-0 z-50 opacity-[0.022] mix-blend-overlay"
