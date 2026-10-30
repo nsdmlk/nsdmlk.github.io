@@ -42,13 +42,13 @@ export const PROFILE = {
     },
     {
       label: "ORCID",
-      handle: "0009-0000-xxxx", // Замени на свой ID
-      url: "https://orcid.org",
+      handle: "0009-0002-6802-7544",
+      url: "https://orcid.org/0009-0002-6802-7544",
     },
     {
       label: "Telegram",
-      handle: "@nsdmlk",
-      url: "https://t.me/nsdmlk",
+      handle: "@KantervilleGhost",
+      url: "https://t.me/KantervilleGhost",
     },
   ] satisfies SocialLink[],
 };
