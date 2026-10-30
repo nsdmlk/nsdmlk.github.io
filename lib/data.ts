@@ -1,73 +1,64 @@
 export interface ProjectLink {
-  label: "GitHub" | "PyPI" | "PRs" | "Best-of-BIT's" | "ORCID" | "Telegram";
+  label: string;
   url: string;
 }
 
-export interface Project {
-  id: string;
+export interface Artifact {
   index: string;
+  year: string;
   title: string;
-  subtitle: string;
-  description: string;
+  field: string;
+  summary: string;
   metric?: {
     label: string;
     value: string;
   };
-  tags: string[];
-  year: string;
-  note?: string;
+  details: string;
+  stack: string[];
   links: ProjectLink[];
-}
-
-export interface SocialLink {
-  label: string;
-  handle: string;
-  url: string;
 }
 
 export const PROFILE = {
   name: "Ilya Emelyanov",
   alias: "nsdmlk",
-  role: "ML Engineer | Researcher",
-  institution: "Beijing Institute of Technology (BIT)",
-  bioPrefix: "Between",
-  bioHighlight: "mathematics & machines.",
-  bioBody:
-    "CS student at BIT. I research small-sample learning, conformal prediction, and reinforcement learning.",
-  socials: [
+  status: "CS @ BIT · Lab of Intelligent Systems",
+  location: "Beijing, China",
+  bioMain: "Between mathematics & machines.",
+  bioSub:
+    "Undergraduate researcher at Beijing Institute of Technology. Exploring inductive priors in low-data regimes, distribution-free conformal calibration, and value-based reinforcement learning.",
+  links: [
     {
       label: "GitHub",
-      handle: "@nsdmlk",
+      value: "github.com/nsdmlk",
       url: "https://github.com/nsdmlk",
     },
     {
       label: "ORCID",
-      handle: "0009-0002-6802-7544",
+      value: "0009-0002-6802-7544",
       url: "https://orcid.org/0009-0002-6802-7544",
     },
     {
       label: "Telegram",
-      handle: "@KantervilleGhost",
-      url: "https://t.me/KantervilleGhost",
+      value: "t.me/nsdmlk",
+      url: "https://t.me/nsdmlk",
     },
-  ] satisfies SocialLink[],
+  ],
 };
 
-export const PROJECTS: Project[] = [
+export const ARTIFACTS: Artifact[] = [
   {
-    id: "smallgbm",
     index: "01",
+    year: "2026",
     title: "SmallGBM",
-    subtitle: "Gradient boosting for small datasets",
-    description:
-      "Lightweight gradient boosted decision trees engineered from scratch with a zero-dependency C core and Python bindings. Tuned specifically to prevent overfitting on low-sample tabular regimes.",
+    field: "Tree-Based Learning",
+    summary: "Gradient boosting for small datasets with a zero-dependency C core.",
     metric: {
       label: "ROC-AUC",
       value: "0.9101",
     },
-    tags: ["C99", "Python", "PyPI", "Tabular ML"],
-    year: "2026",
-    note: " Hand-rolled histogram binning & tree splits in pure C.",
+    details:
+      "Tuned histogram binning and bespoke split regularization designed to prevent tree-level variance collapse on sample sizes where XGBoost/LightGBM overfit.",
+    stack: ["C99", "Python", "Cython", "PyPI"],
     links: [
       { label: "GitHub", url: "https://github.com/nsdmlk/smallgbm" },
       { label: "PyPI", url: "https://pypi.org/project/smallgbm/" },
@@ -75,35 +66,36 @@ export const PROJECTS: Project[] = [
     ],
   },
   {
-    id: "smallmlp",
     index: "02",
+    year: "2026",
     title: "SmallMLP",
-    subtitle: "Adaptive MLP with conformal prediction",
-    description:
-      "Neural architecture tailored for tabular small-sample regimes with built-in distribution-free uncertainty quantification via split conformal prediction.",
+    field: "Uncertainty Quantification",
+    summary: "Adaptive multilayer perceptron with split conformal prediction.",
     metric: {
       label: "Benchmark",
       value: "25/45 wins",
     },
-    tags: ["PyTorch", "Conformal Prediction", "PyPI"],
-    year: "2026",
-    note: "Guaranteed finite-sample coverage without distributional assumptions.",
+    details:
+      "Architecture pairing inductive tabular priors with distribution-free conformal inference. Guarantees finite-sample coverage intervals for safety-critical predictions.",
+    stack: ["PyTorch", "Conformal Prediction", "PyPI"],
     links: [
       { label: "GitHub", url: "https://github.com/nsdmlk/smallmlp" },
       { label: "PyPI", url: "https://pypi.org/project/smallmlp/" },
-      { label: "Best-of-BIT's", url: "https://github.com/YDX-2147483647/best-of-bits" },
     ],
   },
   {
-    id: "rl-from-scratch",
     index: "03",
-    title: "RL-from-scratch",
-    subtitle: "Value-based RL from first principles",
-    description:
-      "Clean, mathematically transparent implementations of Deep Q-Networks (DQN) and Double DQN. Built to dissect Bellman backups, target network stability, and replay buffer dynamics without heavy framework abstractions.",
-    tags: ["Python", "RL", "DQN", "Double DQN"],
     year: "2025",
-    note: "No black-box wrappers — pure math-to-code translation.",
+    title: "RL-from-scratch",
+    field: "Sequential Optimization",
+    summary: "First-principles implementation of value-based RL algorithms.",
+    metric: {
+      label: "Focus",
+      value: "DQN · DDQN",
+    },
+    details:
+      "Pedagogical and mathematically rigorous decomposition of temporal difference errors, non-stationary target divergence, and experience replay dynamics.",
+    stack: ["Python", "NumPy", "Gymnasium"],
     links: [
       { label: "GitHub", url: "https://github.com/nsdmlk/rl-from-scratch" },
     ],
