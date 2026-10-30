@@ -28,7 +28,7 @@ export const Sidebar: React.FC = () => {
         {/* Верхняя архивная мета-строка */}
         <div className="flex items-center gap-2.5 font-mono text-[11px] uppercase tracking-[0.16em] text-stone mb-6">
           <span className="h-1.5 w-1.5 rounded-full bg-brass/80" />
-          <span>Index · {PROFILE.alias}</span>
+          <span>{PROFILE.alias}</span>
           {beijingTime && (
             <>
               <span className="text-neutral-800">/</span>

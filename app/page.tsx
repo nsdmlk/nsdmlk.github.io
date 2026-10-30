@@ -73,9 +73,6 @@ export default function HomePage() {
           {/* Footer */}
           <footer className="pt-8 border-t border-neutral-800/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 font-mono text-[11px] tracking-[0.2em] text-stone uppercase">
             <span>BEIJING · CHINA · 2026</span>
-            <span className="font-serif italic normal-case tracking-normal text-xs text-stone">
-              Typeset in Newsreader, Inter & JetBrains Mono.
-            </span>
           </footer>
         </main>
       </div>
