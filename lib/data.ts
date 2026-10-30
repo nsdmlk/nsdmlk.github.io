@@ -39,8 +39,8 @@ export const PROFILE = {
     },
     {
       label: "Telegram",
-      value: "t.me/nsdmlk",
-      url: "https://t.me/nsdmlk",
+      value: "t.me/KantervilleGhost",
+      url: "https://t.me/KantervilleGhost",
     },
   ],
 };
