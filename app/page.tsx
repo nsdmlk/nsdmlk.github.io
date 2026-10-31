@@ -78,7 +78,7 @@ export default function EditorialPage() {
           <div className="mt-8 pt-4 border-t border-neutral-900 grid grid-cols-3 gap-4 font-mono text-[11px] text-neutral-500">
             <div>
               <span className="block text-neutral-400">DOMAIN</span>
-              Small Tabular &amp; RL
+              Reinforcement Learning &amp; Embodied AI &amp; Small Data
             </div>
             <div>
               <span className="block text-neutral-400">METHOD</span>

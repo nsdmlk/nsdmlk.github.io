@@ -20,8 +20,8 @@ export interface Artifact {
 
 export const PROFILE = {
   name: "Ilya Emelyanov",
-  alias: "nsdmlk",
-  status: "CS @ BIT · Lab of Intelligent Systems",
+  alias: "Kanterville Ghost",
+  status: "CS @ BIT",
   location: "Beijing, China",
   bioMain: "Between mathematics & machines.",
   bioSub:
@@ -81,11 +81,12 @@ export const ARTIFACTS: Artifact[] = [
     links: [
       { label: "GitHub", url: "https://github.com/nsdmlk/smallmlp" },
       { label: "PyPI", url: "https://pypi.org/project/smallmlp/" },
+      { label: "Best-of-BIT's", url: "https://github.com/YDX-2147483647/best-of-bits" },
     ],
   },
   {
     index: "03",
-    year: "2025",
+    year: "2026",
     title: "RL-from-scratch",
     field: "Sequential Optimization",
     summary: "First-principles implementation of value-based RL algorithms.",
